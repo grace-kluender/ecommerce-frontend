@@ -34,11 +34,15 @@ This repository follows a standardized structure used across all microservices r
 
 
 ---
-
 ## Prerequisites
 
-- Node.js (LTS recommended)
-- npm
+- Node.js (v18+ recommended)
+- npm (comes with Node)
+
+Verify installation:
+
+node -v
+npm -v
 
 ---
 
