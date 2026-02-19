@@ -23,6 +23,7 @@ At this stage (Phase 1), the focus is on repository structure, local development
 
 This repository follows a standardized structure used across all microservices repositories:
 
+```
 ├── src/ # React application source code
 │ ├── App.js # Fetches products + creates orders via backend APIs
 │ └── index.js# React entry point
@@ -31,6 +32,7 @@ This repository follows a standardized structure used across all microservices r
 ├── scripts/ # Operational helper scripts
 ├── package.json
 └── README.md
+```
 
 
 ---
