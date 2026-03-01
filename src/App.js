@@ -7,13 +7,13 @@ function App() {
 
     useEffect(() => {
         // Fetch products
-        axios.get('http://localhost:3001/products')
+        axios.get(`${process.env.REACT_APP_PRODUCT_API_URL}/products`)
             .then(res => setProducts(res.data))
             .catch(err => console.error(err));
     }, []);
 
     const createOrder = (productId) => {
-        axios.post('http://localhost:3002/orders', {
+        axios.post(`${process.env.REACT_APP_ORDER_API_URL}/orders`, {
             productId: productId,
             quantity: 1
         })
