@@ -43,8 +43,10 @@ This repository follows a standardized structure used across all microservices r
 
 Verify installation:
 
+```
 node -v
 npm -v
+```
 
 ---
 
@@ -53,11 +55,14 @@ npm -v
 This application uses environment variables to configure backend service URLs.
 
 1. Create a local environment file
+```
     cp .env.example .env
+```
 
 2. Update values if needed
 
 NOTE: All frontend environment variables must start with REACT_APP_
+
 ---
 
 ## Run Locally
