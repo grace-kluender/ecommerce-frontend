@@ -1,0 +1,86 @@
+
+
+## Overview
+
+                    │                      Analyzed Image                       
+────────────────────┼───────────────────────────────────────────────────────────
+  Target            │  gracekluender/ecommerce-frontend-service:1.0.0           
+    digest          │  f2098a299750                                             
+    platform        │ linux/arm64                                               
+    provenance      │ https://github.com/grace-kluender/ecommerce-frontend.git  
+                    │  https://github.com/grace-kluender/ecommerce-frontend/blob/0b4169cbad0e176c38e3c8a7f1f8408919299cf5                 
+    vulnerabilities │    0C     1H     6M     2L                                
+    size            │ 26 MB                                                     
+    packages        │ 88                                                        
+
+
+## Packages and Vulnerabilities
+
+   0C     1H     0M     0L  libpng 1.6.54-r0
+pkg:apk/alpine/libpng@1.6.54-r0?os_name=alpine&os_version=3.23
+
+    ✗ HIGH CVE-2026-25646
+      https://scout.docker.com/v/CVE-2026-25646?s=alpine&n=libpng&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C1.6.55-r0
+      Affected range : <1.6.55-r0  
+      Fixed version  : 1.6.55-r0   
+    
+
+   0C     0H     5M     1L  curl 8.17.0-r1
+pkg:apk/alpine/curl@8.17.0-r1?os_name=alpine&os_version=3.23
+
+    ✗ MEDIUM CVE-2025-14017
+      https://scout.docker.com/v/CVE-2025-14017?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+    ✗ MEDIUM CVE-2025-13034
+      https://scout.docker.com/v/CVE-2025-13034?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+    ✗ MEDIUM CVE-2025-15079
+      https://scout.docker.com/v/CVE-2025-15079?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+    ✗ MEDIUM CVE-2025-14819
+      https://scout.docker.com/v/CVE-2025-14819?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+    ✗ MEDIUM CVE-2025-14524
+      https://scout.docker.com/v/CVE-2025-14524?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+    ✗ LOW CVE-2025-15224
+      https://scout.docker.com/v/CVE-2025-15224?s=alpine&n=curl&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D8.17.0-r1
+      Affected range : <=8.17.0-r1  
+      Fixed version  : not fixed    
+    
+
+   0C     0H     1M     0L  busybox 1.37.0-r30
+pkg:apk/alpine/busybox@1.37.0-r30?os_name=alpine&os_version=3.23
+
+    ✗ MEDIUM CVE-2025-60876
+      https://scout.docker.com/v/CVE-2025-60876?s=alpine&n=busybox&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D1.37.0-r30
+      Affected range : <=1.37.0-r30  
+      Fixed version  : not fixed     
+    
+
+   0C     0H     0M     1L  zlib 1.3.1-r2
+pkg:apk/alpine/zlib@1.3.1-r2?os_name=alpine&os_version=3.23
+
+    ✗ LOW CVE-2026-27171
+      https://scout.docker.com/v/CVE-2026-27171?s=alpine&n=zlib&ns=alpine&t=apk&osn=alpine&osv=3.23&vr=%3C%3D1.3.1-r2
+      Affected range : <=1.3.1-r2  
+      Fixed version  : not fixed   
+    
+
+
+9 vulnerabilities found in 4 packages
+  CRITICAL  0  
+  HIGH      1  
+  MEDIUM    6  
+  LOW       2  
+
