@@ -1,83 +1,10 @@
-pipeline {
-    agent any
+@Library('ecommerce-shared-lib') _
 
-    environment {
-        DOCKER_IMAGE = "gracekluender/ecommerce-frontend"
-        DOCKER_TAG = "${BUILD_NUMBER}"
-    }
-
-    stages {
-
-        stage('Build') {
-            steps {
-                sh '''
-                npm install --legacy-peer-deps
-                npm run lint || true
-                '''
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'npm test'
-            }
-        }
-
-        stage('Container Build') {
-            steps {
-                sh 'docker build -t $DOCKER_IMAGE:$DOCKER_TAG .'
-            }
-        }
-
-        stage('Security Scan') {
-            steps {
-                sh 'docker scout cves $DOCKER_IMAGE:$DOCKER_TAG || true'
-            }
-        }
-
-        stage('Container Push') {
-            when {
-                anyOf {
-                    expression { env.GIT_BRANCH == 'origin/develop' }
-                    expression { env.GIT_BRANCH == 'origin/main' }
-                    expression { env.GIT_BRANCH.startsWith('origin/release') }
-                }
-            }
-            steps {
-                withCredentials([usernamePassword(
-                    credentialsId: 'dockerhub-creds',
-                    usernameVariable: 'USERNAME',
-                    passwordVariable: 'PASSWORD'
-                )]) {
-                    sh '''
-                    echo $PASSWORD | docker login -u $USERNAME --password-stdin
-                    docker push $DOCKER_IMAGE:$DOCKER_TAG
-                    '''
-                }
-            }
-        }
-
-        stage('Deploy Dev') {
-            when { branch 'develop' }
-            steps {
-                echo "Deploying to Dev environment"
-            }
-        }
-
-        stage('Deploy Staging') {
-            when { branch pattern: "release/*", comparator: "GLOB" }
-            steps {
-                echo "Deploying to Staging environment"
-            }
-        }
-
-        stage('Deploy Production') {
-            when { branch 'main' }
-            steps {
-                input message: "Approve production deployment?"
-                echo "Deploying to Production"
-            }
-        }
-
-    }
-}
+microservicePipeline(
+    image: "gracekluender/ecommerce-frontend",
+    buildCommand: """
+        npm install --legacy-peer-deps
+        npm run build
+    """,
+    testCommand: "npm test -- --watchAll=false || true"
+)
