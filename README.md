@@ -7,6 +7,7 @@ The frontend:
 - Creates orders through the Order Service
 - Displays product catalog and order interactions
 
+
 ---
 
 ## Tech Stack
